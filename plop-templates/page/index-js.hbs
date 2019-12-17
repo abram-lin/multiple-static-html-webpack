@@ -1,0 +1,13 @@
+{{#if adaptive}}
+import '../../utils/adaptive'
+{{/if}}
+import '../../utils/general'
+import '../../style/general.scss'
+import './index.scss'
+
+{{#if adaptive}}
+window.adaptive.desinWidth = 750 // design width
+window.adaptive.baseFont = 18
+window.adaptive.maxWidth = 480 // max width
+window.adaptive.init()
+{{/if}}

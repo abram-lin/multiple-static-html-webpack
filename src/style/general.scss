@@ -1,0 +1,185 @@
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+  Microsoft YaHei, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  touch-action: manipulation;
+}
+
+
+video:focus {
+  outline: none;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+button {
+  border: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+button:focus {
+  outline: none;
+}
+
+video:focus {
+  outline: none;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-top: -10px;
+  margin-left: -.25rem;
+  border-radius: 50%;
+  border-top: 0.04rem solid rgba(199, 23, 65, 0.8);
+  border-right: 0.04rem solid transparent;
+  animation: spinner 0.6s linear infinite;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.dialog-parent-hidden {
+  overflow: hidden;
+}
+
+.dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background: rgba(130, 130, 130, 0.7);
+  z-index: 2000;
+  visibility: hidden;
+  opacity: 0;
+  touch-action: manipulation;
+}
+
+.show-dialog {
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+  animation-name: fadeIn;
+}
+
+.hide-dialog {
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-name: fadeOut;
+}
+
+
+.toast-manager {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  padding: 16px;
+  width: 298px;
+  font-size: 14px;
+  opacity: 0;
+  left: calc(50% - 149px);
+  top: 40%;
+  z-index: 10;
+}
+
+.toast-animated {
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes toast-popup {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -200%, 0);
+  }
+
+  11% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.toast-popup {
+  animation-name: toast-popup;
+}

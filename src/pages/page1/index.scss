@@ -1,0 +1,41 @@
+body {
+  max-width: 7.5rem; // 设计图宽度为640px时为6.4rem ,750时为7.5rem ，以此类推*/
+  margin: 0 auto;
+}
+
+body * {
+  max-width: 7.5rem;
+}
+
+@function cR($size) { // calculate rem
+  $rSize: $size / 100;
+  @return #{$rSize}rem;
+}
+
+.page1 {
+  margin: 6px;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, .2);
+
+  h1 {
+    text-align: center;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    width: cR(650);
+  }
+
+  button {
+    display: block;
+    font-size: cR(30);
+    width: cR(220);
+    height: cR(72);
+    color: red;
+    border-radius: cR(25);
+    position: absolute;
+    top: cR(166);
+    right: cR(16);
+  }
+}

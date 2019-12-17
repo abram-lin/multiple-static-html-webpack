@@ -1,0 +1,42 @@
+body {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+body * {
+  max-width: 320px;
+}
+
+@function cR($size) { // calculate rem
+  $rSize: $size / 100;
+  @return #{$rSize}rem;
+}
+
+.page1 {
+  margin: 6px;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, .2);
+
+  h1 {
+    text-align: center;
+    font-size: 18px;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 277px;
+  }
+
+  button {
+    display: block;
+    font-size: 14px;
+    width: 93px;
+    height: 30px;
+    color: red;
+    border-radius: cR(25);
+    position: absolute;
+    top: cR(166);
+    right: cR(16);
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "name": "multiple-static-html-webpack",
+  "version": "1.0.1",
+  "description": "webpack templete use for multiple traditional static web page.",
+  "main": "index.js",
+  "repository": "https://github.com/abram-lin/multiple-static-html-webpack.git",
+  "author": "abram",
+  "license": "Apache-2.0",
+  "private": false,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
+    "preview": "npm run build && http-server dist",
+    "new": "plop"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "autoprefixer": "^9.6.1",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "chalk": "^2.4.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.4",
+    "cross-env": "^5.2.0",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.5.1",
+    "file-loader": "^4.2.0",
+    "glob": "^7.1.4",
+    "global": "^4.4.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "http-server": "^0.11.1",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "plop": "^2.4.0",
+    "postcss-loader": "^3.0.0",
+    "progress-bar-webpack-plugin": "^1.12.1",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "url-loader": "^2.1.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "lodash-es": "^4.17.15",
+    "moment": "^2.24.0"
+  },
+  "browserslist": {
+    "browsers": [
+      "ie >= 9",
+      "ff >= 30",
+      "chrome >= 34",
+      "safari >= 7",
+      "opera >= 23"
+    ]
+  }
+}
