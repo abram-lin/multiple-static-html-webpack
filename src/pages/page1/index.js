@@ -1,5 +1,4 @@
 import '../../utils/adaptive'
-import '../../utils/general'
 import '../../style/general.scss'
 import './index.scss'
 
