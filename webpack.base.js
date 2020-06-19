@@ -94,7 +94,20 @@ module.exports = {
         use: {
           loader: 'html-loader',
           options: {
-            attrs: ['img:src', 'link:href']
+            attributes: {
+              list: [
+                {
+                  tag: 'img',
+                  attribute: 'src',
+                  type: 'src'
+                },
+                {
+                  tag: 'link',
+                  attribute: 'href',
+                  type: 'src'
+                }
+              ]
+            }
           }
         }
       }
@@ -109,12 +122,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css'
     }),
-    new CopyWebpackPlugin([
-      {
+    new CopyWebpackPlugin({
+      patterns: [{
         from: './public',
         to: ''
-      }
-    ]),
+      }]
+    }),
     new ProgressBarPlugin({
       format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds)'
     }),
