@@ -30,15 +30,7 @@ function genHtml() {
       chunks: [name, 'runtime', 'vendors', 'common'],
       inject: 'head',
       hash: true,
-      minify: devMode ? false : {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true,
-        minifyJS: true
-      }
+      minify: false
     }))
   })
   return htmlArr
@@ -107,6 +99,18 @@ module.exports = {
                   type: 'src'
                 }
               ]
+            },
+            minimize: devMode ? false : {
+              collapseWhitespace: false,
+              conservativeCollapse: true,
+              keepClosingSlash: true,
+              minifyCSS: true,
+              minifyJS: true,
+              removeAttributeQuotes: false,
+              removeComments: true,
+              removeScriptTypeAttributes: true,
+              removeStyleTypeAttributes: true,
+              useShortDoctype: true
             }
           }
         }
@@ -139,8 +143,8 @@ module.exports = {
       ANDROID_APP_DL_URL: JSON.stringify('http://www.pgyer.com/Eg9I'),
       AVATAR_SM_CDN_URL: JSON.stringify('http://img.zyzygame.com/icon/small/'),
       IMAGE_CDN_URL: JSON.stringify('http://test.img.zyzygame.com/'),
-      WECHAT_APP_ID: JSON.stringify('wxfe4466c8753f345d'),
-      JPUSH_KEY: JSON.stringify('e91287f5b88dc065234a1209'),
+      WECHAT_APP_ID: JSON.stringify('xxxx'),
+      JPUSH_KEY: JSON.stringify('xxxx'),
       DEV_MODE: devMode
     })
   ].concat(genHtml()),
