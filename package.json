@@ -61,7 +61,7 @@
   },
   "dependencies": {
     "jquery": "^3.5.1",
-    "lodash-es": "^4.17.15",
+    "lodash-es": "^4.17.21",
     "moment": "^2.24.0"
   },
   "browserslist": {
